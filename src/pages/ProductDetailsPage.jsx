@@ -13,8 +13,8 @@ const ProductDetailsPage = () => {
                 const response = await fetch(`https://huitian.serv00.net/project/?productId=${productId}`);
                 const data = await response.json();
                 setProduct(data);
-                if (data.images && data.images.length > 0) {
-                    setMainImage(data.images[0]);
+                if (data.imageUrls && data.imageUrls.length > 0) {
+                    setMainImage(data.imageUrls[0]);
                 }
             } catch (error) {
                 console.error('Error fetching product details:', error);
@@ -33,7 +33,7 @@ const ProductDetailsPage = () => {
         const currentQty = cart[product.productId]?.quantity || 0;
 
         // Use the first image as the thumbnail for the cart
-        const cartImage = product.images && product.images.length > 0 ? product.images[0] : '';
+        const cartImage = product.imageUrls && product.imageUrls.length > 0 ? product.imageUrls[0] : '';
 
         cart[product.productId] = {
             productId: product.productId,
@@ -55,7 +55,7 @@ const ProductDetailsPage = () => {
             <div className="flex flex-col md:flex-row gap-6 mb-8">
                 {/* Thumbnails */}
                 <div className="flex md:flex-col gap-4 order-2 md:order-1">
-                    {product.images && product.images.map((img, index) => (
+                    {product.imageUrls && product.imageUrls.map((img, index) => (
                         <div
                             key={index}
                             onClick={() => setMainImage(img)}
@@ -92,10 +92,10 @@ const ProductDetailsPage = () => {
                 </button>
 
                 <div className="space-y-2 text-gray-800">
-                    <p><span className="font-bold">Description:</span> {product.description}</p>
-                    <p><span className="font-bold">Screen Size:</span> {product.screen}</p>
+                    <p><span className="font-bold">Description:</span> {product.longDescription || product.shortDescription}</p>
+                    <p><span className="font-bold">Screen Size:</span> {product.screenSize}</p>
                     <p><span className="font-bold">Weight:</span> {product.weight}</p>
-                    <p><span className="font-bold">Battery Spec:</span> {product.battery}</p>
+                    <p><span className="font-bold">Battery Spec:</span> {product.batterySpec}</p>
                 </div>
             </div>
         </div>
