@@ -67,12 +67,13 @@ const HomePage = () => {
 
         cart[product.productId] = {
             ...product,
+            image: product.imageUrl, // Map API's imageUrl to cart's expected image property
             quantity: currentQty + 1
         };
 
         localStorage.setItem('cart', JSON.stringify(cart));
         // Ideally we would use a Context or Redux to update header count immediately
-        alert(`Added ${product.productId} to cart!`);
+        console.log(`Added ${product.productId} to cart!`);
     };
 
     return (
