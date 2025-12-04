@@ -67,6 +67,7 @@ const HomePage = () => {
 
         cart[product.productId] = {
             ...product,
+            image: product.imageUrl, // Map API's imageUrl to cart's expected image property
             quantity: currentQty + 1
         };
 
