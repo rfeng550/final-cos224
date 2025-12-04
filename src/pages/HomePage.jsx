@@ -73,7 +73,7 @@ const HomePage = () => {
 
         localStorage.setItem('cart', JSON.stringify(cart));
         // Ideally we would use a Context or Redux to update header count immediately
-        alert(`Added ${product.productId} to cart!`);
+        console.log(`Added ${product.productId} to cart!`);
     };
 
     return (
