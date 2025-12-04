@@ -58,8 +58,8 @@ const CartPage = () => {
                         <div key={item.productId} className="flex flex-col md:flex-row items-center border-b border-gray-200 pb-6 gap-4">
                             {/* Image */}
                             <div className="w-24 h-24 bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                                {item.image ? (
-                                    <img src={item.image} alt={item.productId} className="w-full h-full object-contain" />
+                                {item.image || item.imageUrl ? (
+                                    <img src={item.image || item.imageUrl} alt={item.productId} className="w-full h-full object-contain" />
                                 ) : (
                                     <span className="text-gray-500 text-sm">Image</span>
                                 )}
