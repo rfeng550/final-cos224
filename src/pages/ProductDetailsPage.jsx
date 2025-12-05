@@ -43,7 +43,7 @@ const ProductDetailsPage = () => {
         };
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log(`Added ${product.productId} to cart!`);
+        localStorage.setItem('cart', JSON.stringify(cart));
     };
 
     if (loading) return <div className="text-center py-8">Loading...</div>;

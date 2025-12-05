@@ -57,11 +57,7 @@ const HomePage = () => {
     };
 
     const handleAddToCart = (product) => {
-        // TODO: Implement cart logic
-        console.log('Added to cart:', product);
-
-        // Temporary alert or toast could be added here
-        // For now, just reading from localStorage to update it
+        // Reading from localStorage to update it
         const cart = JSON.parse(localStorage.getItem('cart') || '{}');
         const currentQty = cart[product.productId]?.quantity || 0;
 
@@ -73,7 +69,6 @@ const HomePage = () => {
 
         localStorage.setItem('cart', JSON.stringify(cart));
         // Ideally we would use a Context or Redux to update header count immediately
-        console.log(`Added ${product.productId} to cart!`);
     };
 
     return (
