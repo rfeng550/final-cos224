@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
-    const [cartItems, setCartItems] = useState([]);
-    const navigate = useNavigate();
-
-    useEffect(() => {
+    const [cartItems, setCartItems] = useState(() => {
         const cart = JSON.parse(localStorage.getItem('cart') || '{}');
-        setCartItems(Object.values(cart));
-    }, []);
+        return Object.values(cart);
+    });
+    const navigate = useNavigate();
 
     const updateQuantity = (productId, change) => {
         const cart = JSON.parse(localStorage.getItem('cart') || '{}');
