@@ -211,7 +211,7 @@ const CheckoutPage = () => {
                 </div>
 
                 {/* Shipping Address */}
-                <section className={`bg-white p-6 rounded-lg shadow-sm border border-gray-200 ${sameAsBilling ? 'opacity-50 pointer-events-none' : ''}`}>
+                <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                     <h2 className="text-xl font-bold mb-4">Shipping Address</h2>
                     <div className="space-y-4">
                         <div>
@@ -219,10 +219,9 @@ const CheckoutPage = () => {
                             <input
                                 type="text"
                                 name="shippingStreet"
-                                required={!sameAsBilling}
+                                required
                                 value={formData.shippingStreet}
                                 onChange={handleInputChange}
-                                readOnly={sameAsBilling}
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -231,10 +230,9 @@ const CheckoutPage = () => {
                             <input
                                 type="text"
                                 name="shippingCity"
-                                required={!sameAsBilling}
+                                required
                                 value={formData.shippingCity}
                                 onChange={handleInputChange}
-                                readOnly={sameAsBilling}
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -243,10 +241,9 @@ const CheckoutPage = () => {
                             <input
                                 type="text"
                                 name="shippingState"
-                                required={!sameAsBilling}
+                                required
                                 value={formData.shippingState}
                                 onChange={handleInputChange}
-                                readOnly={sameAsBilling}
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -255,10 +252,9 @@ const CheckoutPage = () => {
                             <input
                                 type="text"
                                 name="shippingZip"
-                                required={!sameAsBilling}
+                                required
                                 value={formData.shippingZip}
                                 onChange={handleInputChange}
-                                readOnly={sameAsBilling}
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
